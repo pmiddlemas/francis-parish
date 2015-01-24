@@ -1,0 +1,65 @@
+body {background-color:#F9F9F9; color:#000; }
+#header {background:#09C url(../i/blue/banner.png);}
+hr {border-bottom:solid 1px #1D88AF;}
+h1, h2 {color:#1D88AF;}
+
+
+/*  navigation  
+#navigation ul li a {color:#333; background-color:#EEE; border-left:solid 3px #CCC;}
+#navigation ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#DDD; border-left:solid 3px #00F;}
+#navigation ul li a.active {background-color:#CCC; border-left:solid 3px #1D88AF;}
+*/
+
+/*  navigation  */
+#navigation ul li a {border: solid 1px #ADE;}
+#navigation ul li a {color:#333; background-color:#ADE; }
+#navigation ul li ul li a {color:#333; background-color:#D0EDF5; }
+#navigation ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#85CEE7; }
+#navigation ul li a.active,
+#navigation ul li a.active:hover {background-color:#166683; color:#FFF;}
+
+/* content */
+img.thumb { 
+	border: solid 2px #1D88AF;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius:2px;
+	-moz-box-shadow: #CCC 3px 3px 2px;
+	-webkit-box-shadow: #CCC 3px 3px 2px;
+	box-shadow: #CCC 3px 3px 2px;}
+/* tables */
+th {
+	background-color:#85CEE7;
+	background: -moz-linear-gradient(#ADE, #85CEE7);
+	background: -webkit-linear-gradient(#ADE, #85CEE7);
+	background: -ms-linear-gradient(#ADE, #85CEE7);
+	background: -linear-gradient(#ADE, #85CEE7);
+	}
+tr:nth-child(odd) {
+	background: #E0E0E0;
+	}
+/* boxes */
+.box.highlight, .box3.highlight {
+	background:#1D88AF url(../i/blue/gradient.png) bottom repeat-x; 
+	color:#FFF;
+	}
+.box.highlight h2, .box3.highlight h2 {
+	color:#FFF; 
+	border-bottom:solid 1px #BBB;
+	}
+#content .box3.highlight a {
+	color:#FFF;
+	}
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery li a {border-bottom:none;}
+#content ul.imageGallery li a:link img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:visited img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:hover img, #content ul.imageGallery li a:focus img, #content ul.imageGallery li a:active img {
+	border: solid 2px #1D88AF;
+	}
+
+
+/* footer */
+#footer {background:#1D88AF url(../i/blue/gradient-short.png) bottom repeat-x; color:#FFF}
+#footer a {color:#FFF;}

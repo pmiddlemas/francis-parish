@@ -1,0 +1,250 @@
+html {overflow-y:scroll;}
+* {padding:0; margin:0;}
+body {font-family: Arial, Helvetica, sans-serif; font-size:85%;}
+body.largeText {font-size:110%;}
+
+
+/* CSS switcher */
+.top ul {float:left;}
+.top ul li {width:20px; height:20px; margin:0 2px 0 0; list-style-type: none;  display:inline;}
+.top ul li a {text-decoration:none; display:block; float:left; width:20px; height:20px;}
+.top ul li a span {visibility:hidden; position:absolute; top:-999px}
+
+ul.switcher li.blue a {background:transparent url(../i/blue/switch-blue.gif) no-repeat top left;}
+ul.switcher li.blue a:hover,
+ul.switcher li.blue a:active,
+ul.switcher li.blue a:focus
+ {background:transparent url(../i/blue/switch-blue.gif) no-repeat top right;}
+
+ul.switcher li.contrast a {background:transparent url(../i/contrast/switch-contrast.gif) no-repeat top left;}
+ul.switcher li.contrast a:hover, 
+ul.switcher li.contrast a:active, 
+ul.switcher li.contrast a:focus 
+ {background:transparent url(../i/contrast/switch-contrast.gif) no-repeat top right;}
+ 
+/* text resizer */
+li.textSwap a {background:transparent url(../i/switch-text.gif) no-repeat top left; margin-left:10px;}
+body.largeText li.textSwap a {background:transparent url(../i/switch-text.gif) no-repeat top right;margin-left:10px;}
+
+
+#header {width:960px; height:110px; margin:0 auto;}
+#header p strong {
+	margin:-9999px 0 0 0;
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	left: -999px;
+	top: -999px;
+}
+
+.top, #wrapper {width:960px; margin:0 auto; overflow:hidden; display:block;}
+.top form {float:right; display:inline; padding:2px 0 4px 0;}
+#q {width:180px;}
+.top form label {display:none;}
+
+/*
+Template uses editable attributes
+use .normal for most pages
+use .wide for calendar page or any other instance where you need a wider page at the expense of readability.
+Then use CSS subselectors to hide and show rightcolumn and change width of content area.
+*/
+#page {width:770px; float:right; margin:10px 0 10px 0;}
+.wide #content {width:770px; float:left;}
+.normal #content {width:520px; float:left;}
+.normal #rightcolumn {float:right; width: 240px;} 
+.wide #rightcolumn {display:none;}/* hides right column in wide pages */
+
+
+
+/*  navigation  */
+#navigation {width:180px; float:left; padding:10px 10px 10px 0;}
+#navigation ul li {padding:3px 0 0 0;}
+#navigation ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
+#navigation ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
+
+
+/*  content  */
+#content * {line-height:1.2em;}
+#content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
+#content ol {margin:0 0 0.5em 37px;}
+#content ul li {padding:0 0 0.8em 0.2em;}
+#content h2 + dl {padding:0.5em 0 0 0;}
+#content dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
+#content dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
+#content dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
+/* Parish councillors list */
+#content dd ul {margin: 0 0 0.1em 30px;}
+#content dd ul li {padding: 0 0 0 0.2em;}
+#content dl dd:last-of-type {margin:0 0 0.8em 0;}
+
+/* ****** Global links styles ****** */
+#content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
+#content a:visited {text-decoration: none; color:#609; border-bottom: dashed 1px #609;}
+#content a:visited:hover {border-bottom:solid #609 1px;}
+#content a:active, #content a:focus {border-bottom: solid 1px #00F;}
+#content a:hover {border-bottom:solid #00F 1px;}
+#content a.noUnderline {border-bottom:none;}
+a img {border:none;}
+
+ul.doc li {list-style-image: url(../i/word.gif); padding:0 0 1em 0.2em;}
+ul.pdf li {list-style-image: url(../i/pdf.gif); padding:0 0 1em 0.2em;}
+
+p {padding:0 0 1em 0;}
+hr {clear:both; padding:1em 0 0 0; border:none;}
+hr + p {padding-top:1em;}
+img.thumb {float:left; margin: 2px 10px 4px 0;}
+img.icon {float:left; margin: 0 5px 5px 0;}
+a img.icon {border:none;}
+sup, sub {font-size:70%;}
+sup {vertical-align:top;}
+
+table {margin:0 0 10px 0;}
+td, th {text-align:left; vertical-align:top; padding:5px;}
+table th, table td {border: solid 1px #DDD;}
+td.number {text-align:right;}
+
+/* split into columns */
+div.double {float:left; width:49%; display:block;}
+div.double p,
+div.double address {margin: 10px 10px 0 0;}
+/* split lists into columns */
+ul.double {width:99%; }
+ul.double li {float:left; width:45%;}
+
+/* ordered lists */
+ol.a  {list-style-type: lower-alpha;}
+ol.i {list-style-type: lower-roman;}
+
+/* Headings */
+h1 {font-family: georgia, serif; letter-spacing:-1px; font-size: 220%; font-weight: normal; padding:0 0 10px 0;}
+h2 {font-family: georgia, serif; letter-spacing:-1px; font-size: 140%; font-weight: normal; padding:2px 0 2px 0; clear:left;}
+h3, h4 {font-size: 100%; clear:left;}
+
+/* Forms */
+legend {padding:5px 5px 10px 5px; font-weight:bold;}
+label:after {content:":";}
+label.error {color:#F00;}
+select {padding:2px 0;}
+#rightcolumn form {margin:5px;}
+#rightcolumn form input {margin:5px 0 0 0; width:155px;}
+#rightcolumn form textarea {margin:5px 0 0 0; width:95%;}
+#rightcolumn form select {margin:0 0 5px 0;}
+#rightcolumn label {clear:both; float:left; padding:5px 5px 0 0; width:60px; }
+#rightcolumn label.wide {width:200px;}
+#rightcolumn label.error {padding:0 0 5px 65px; width:140px; font-size:90%;}
+
+#rightcolumn #submit {float:left; margin:5px 0 0 0; width:75px;}
+#rightcolumn #reset {float:left; margin:5px 0 0 5px; width:75px;}
+	
+#content form {margin:5px; padding:0 0 60px 0;}
+#content form input {margin:5px 0 5px 0; width:88%; clear:left; }
+#content form textarea {margin:5px 0 5px 0; width:88%;}
+#content label {clear:both; float:left; padding:5px 5px 0 0; width:10%;}
+#content label.wide {width:90%;}
+#content label.error {float:left; width:90%; padding:5px 0; font-size:90%}
+#content #submit,
+#content #reset {float:left; margin:5px 0 10px 0; width:80px;}
+#content #reset {clear:none;}
+
+#content .box2 form textarea, 
+#content .box2 form input {width: 90%}
+
+.requiredField {color:#F00;}
+
+/* radio and checkboxes*/	
+#content form input[type=radio], 
+#content form input[type=checkbox] {width:50px; float:left; }
+#content form fieldset label {float:left; min-width:450px; clear:none;}
+#content form fieldset label:after {content:"";}
+#content form fieldset {border: none;}
+#content  form fieldset label.error {float:none;}
+blockquote {margin-left: 10px;}
+
+
+.openform {
+	float:left; 
+	width:99%;
+	padding:1em 0 1em 5px;
+	margin:10px 0 0 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius:6px; 
+	background-color:#DDD;}
+
+.openform a {color:#000; background:#FFF url(../i/arrow.gif) no-repeat 0% 50%; width:200px; display: block; margin:0 auto; padding:2px 0 2px 20px; text-decoration:none;}
+.openform a:hover, .openform a:focus {text-decoration:underline;}
+
+/* Boxes */
+.box, .box2, .box3 {
+	float:left;  
+	padding:0; 
+	margin:0 10px 10px 0; 
+	min-height:90px; 
+	overflow:hidden; border:solid 1px #DDD;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius:6px; 
+	background:#DDD url(../i/gradient.png) bottom repeat-x;}
+.box {width:99%;}
+.box2 {width:371px;}
+.box3 {width:244px;}
+
+.box h2, .box2 h2, .box3 h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
+.box p, .box2 p, .box3 p {padding: 5px;}
+.box2 h3 {padding: 2px 0px 0 5px;}
+.box3 a img {border:none;}
+#content .box3 dl dt, #content .box2 dl dt {clear:both; padding:0 0 0 5px; font-weight:normal; border: none;}
+#content .box3 dl dd, #content .box2 dl dd { padding:0 0 2px 5px; border: none;}
+
+#content .box3 dl dt {width:45%;}
+#content .box3 dl dd {width:50%;}
+
+#content .box2 dl dt {width:30%;}
+#content .box2 dl dd {width:65%;}
+
+/* Christmas only */
+
+#content .box2 h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
+#content .box2 h2.xmas-line {line-height:41px;}
+
+/* Boxes - right column */
+#rightcolumn .box {margin:0;}
+.box3.last, .box2.last, box {margin-right:0;}
+.last + * {clear:both;}
+
+/* Contact us page */
+#map_canvas {height:350px;}
+#content address {font-style:normal; padding:0 5px;}
+
+/* Accessibility page */
+#content table.switch-icons ul {margin:0; padding:0;}
+#content table.switch-icons ul li {width:20px; height:20px; margin:0 2px 0 0; list-style-type: none;}
+#content table.switch-icons ul li a {border-bottom:none; display:block; float:left; width:20px; height:20px; margin:0;}
+#content table.switch-icons ul li a span {visibility:hidden; position:absolute; top:-999px}
+
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery {margin:10px 0;}
+#content ul.imageGallery li {float:left; padding:6px 2px 0 0; list-style-type:none;}
+
+#content ul.imageGallery + * {clear:both;}
+
+/* Ad hoc utilities */
+.clear {clear:both;}
+.right {float:right;}
+
+/* footer */
+#footer {clear:both; width:960px; min-height:60px; margin:10px auto; font-size:0.8em; overflow:hidden; border-radius:10px;
+	}
+#footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
+#footer ul li {list-style-type: none; float:left; width:26%;}
+#footer ul li:first-child {width:20%;}
+#footer p.copyright {margin:0 0 5px 190px; padding:5px 0 0 0;}
+
+
+@media print {
+#navigation, .top, #footer, #header {display:none;}
+#page #content {width:17cm; margin:0 10px 0 -140px;}
+.box3 {width:30%;}
+.box2 {width:45%;}
+}
