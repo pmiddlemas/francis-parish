@@ -1,0 +1,286 @@
+html {overflow-y:scroll;}
+* {padding:0; margin:0;}
+body {font-family: Arial, Helvetica, sans-serif; font-size:85%;}
+
+
+#header {max-width:960px; height:110px; margin:0 auto;}
+#header p strong {
+	margin:-9999px 0 0 0;
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	left: -999px;
+	top: -999px;
+}
+
+.top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
+.top form {float:right; display:inline; padding:2px 0 4px 0;}
+#q {width:180px;}
+.top form label {display:none;}
+
+/*
+Template uses editable attributes
+use .normal for most pages
+use .wide for calendar page or any other instance where you need a wider page at the expense of readability.
+Then use CSS subselectors to hide and show rightcolumn and change width of content area.
+*/
+#page {max-width:770px; float:right; margin:10px 0 10px 0;}
+.wide #content {max-width:770px; float:left;}
+.normal #content {max-width:520px; float:left;}
+.normal #rightcolumn {float:right; width: 240px;} 
+.wide #rightcolumn {display:none;}/* hides right column in wide pages */
+
+
+
+/*  navigation  */
+#navigation {max-width:180px; float:left; padding:10px 10px 10px 0;}
+#navigation ul li {padding:3px 0 0 0;}
+#navigation ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
+#navigation ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
+
+
+/*  content  */
+#content * {line-height:1.2em;}
+#content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
+#content ol {margin:0 0 0.5em 37px;}
+#content ul li {padding:0 0 0.8em 0.2em;}
+#content h2 + dl {padding:0.5em 0 0 0;}
+#content dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
+#content dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
+#content dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
+/* Parish councillors list */
+#content dd ul {margin: 0 0 0.1em 30px;}
+#content dd ul li {padding: 0 0 0 0.2em;}
+#content dl dd:last-of-type {margin:0 0 0.8em 0;}
+
+/* ****** Global links styles ****** */
+#content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
+#content a:visited {text-decoration: none; color:#609; border-bottom: dashed 1px #609;}
+#content a:visited:hover {border-bottom:solid #609 1px;}
+#content a:active, #content a:focus {border-bottom: solid 1px #00F;}
+#content a:hover {border-bottom:solid #00F 1px;}
+#content a.noUnderline {border-bottom:none;}
+a img {border:none;}
+
+ul.doc li {list-style-image: url(../img/word.gif); padding:0 0 1em 0.2em;}
+ul.pdf li {list-style-image: url(../img/pdf.gif); padding:0 0 1em 0.2em;}
+
+p {padding:0 0 1em 0;}
+hr {clear:both; padding:1em 0 0 0; border:none;}
+hr + p {padding-top:1em;}
+img.thumb {float:left; margin: 2px 10px 4px 0;}
+img.icon {float:left; margin: 0 5px 5px 0;}
+a img.icon {border:none;}
+sup, sub {font-size:70%;}
+sup {vertical-align:top;}
+
+table {margin:0 0 10px 0;}
+td, th {text-align:left; vertical-align:top; padding:5px;}
+table th, table td {border: solid 1px #DDD;}
+td.number {text-align:right;}
+
+/* split into columns */
+div.double {float:left; width:49%; display:block;}
+div.double p,
+div.double address {margin: 10px 10px 0 0;}
+/* split lists into columns */
+ul.double {width:99%; }
+ul.double li {float:left; width:45%;}
+
+/* ordered lists */
+ol.a  {list-style-type: lower-alpha;}
+ol.i {list-style-type: lower-roman;}
+
+/* Headings */
+h1 {font-family: georgia, serif; letter-spacing:-1px; font-size: 220%; font-weight: normal; padding:0 0 10px 0;}
+h2 {font-family: georgia, serif; letter-spacing:-1px; font-size: 140%; font-weight: normal; padding:2px 0 2px 0; clear:left;}
+h3, h4 {font-size: 100%; clear:left;}
+
+/* Forms */
+legend {padding:5px 5px 10px 5px; font-weight:bold;}
+label:after {content:":";}
+label.error {color:#F00;}
+select {padding:2px 0;}
+#rightcolumn form {margin:5px;}
+#rightcolumn form input {margin:5px 0 0 0; width:155px;}
+#rightcolumn form textarea {margin:5px 0 0 0; width:95%;}
+#rightcolumn form select {margin:0 0 5px 0;}
+#rightcolumn label {clear:both; float:left; padding:5px 5px 0 0; width:60px; }
+#rightcolumn label.wide {width:200px;}
+#rightcolumn label.error {padding:0 0 5px 65px; width:140px; font-size:90%;}
+
+#rightcolumn #submit {float:left; margin:5px 0 0 0; width:75px;}
+#rightcolumn #reset {float:left; margin:5px 0 0 5px; width:75px;}
+	
+#content form {margin:5px; padding:0 0 60px 0;}
+#content form input {margin:5px 0 5px 0; width:88%; clear:left; }
+#content form textarea {margin:5px 0 5px 0; width:88%;}
+#content label {clear:both; float:left; padding:5px 5px 0 0; width:10%;}
+#content label.wide {width:90%;}
+#content label.error {float:left; width:90%; padding:5px 0; font-size:90%}
+#content #submit,
+#content #reset {float:left; margin:5px 0 10px 0; width:80px;}
+#content #reset {clear:none;}
+
+#content .box2 form textarea, 
+#content .box2 form input {width: 90%}
+
+.requiredField {color:#F00;}
+
+/* radio and checkboxes*/	
+#content form input[type=radio], 
+#content form input[type=checkbox] {width:50px; float:left; }
+#content form fieldset label {float:left; min-width:450px; clear:none;}
+#content form fieldset label:after {content:"";}
+#content form fieldset {border: none;}
+#content  form fieldset label.error {float:none;}
+blockquote {margin-left: 10px;}
+
+
+.openform {
+	float:left; 
+	width:99%;
+	padding:1em 0 1em 5px;
+	margin:10px 0 0 0;
+	border-radius:5px; 
+	background-color:#DDD;}
+
+.openform a {color:#000; background:#FFF url(../i/arrow.gif) no-repeat 0% 50%; width:200px; display: block; margin:0 auto; padding:2px 0 2px 20px; text-decoration:none;}
+.openform a:hover, .openform a:focus {text-decoration:underline;}
+
+/* Boxes */
+.box, .box2, .box3 {
+	float:left;  
+	padding:0; 
+	margin:0 10px 10px 0; 
+	min-height:90px; 
+	overflow:hidden; border:solid 1px #DDD;
+	border-radius:5px; 
+	background:linear-gradient(#DDDDDD, #D0D0D0);
+	}
+.box {width:99%;}
+.box2 {width:371px;}
+.box3 {width:244px;}
+
+.box h2, .box2 h2, .box3 h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
+.box p, .box2 p, .box3 p {padding: 5px;}
+.box2 h3 {padding: 2px 0px 0 5px;}
+.box3 a img {border:none;}
+#content .box3 dl dt, #content .box2 dl dt {clear:both; padding:0 0 0 5px; font-weight:normal; border: none;}
+#content .box3 dl dd, #content .box2 dl dd { padding:0 0 2px 5px; border: none;}
+
+#content .box3 dl dt {width:45%;}
+#content .box3 dl dd {width:50%;}
+
+#content .box2 dl dt {width:30%;}
+#content .box2 dl dd {width:65%;}
+
+/* Christmas only */
+
+#content .box2 h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
+#content .box2 h2.xmas-line {line-height:41px;}
+
+/* Boxes - right column */
+#rightcolumn .box {margin:0;}
+.box3.last, .box2.last, box {margin-right:0;}
+.last + * {clear:both;}
+
+/* Contact us page */
+#map_canvas {height:350px;}
+#content address {font-style:normal; padding:0 5px;}
+
+/* Accessibility page */
+#content table.switch-icons ul {margin:0; padding:0;}
+#content table.switch-icons ul li {width:20px; height:20px; margin:0 2px 0 0; list-style-type: none;}
+#content table.switch-icons ul li a {border-bottom:none; display:block; float:left; width:20px; height:20px; margin:0;}
+#content table.switch-icons ul li a span {visibility:hidden; position:absolute; top:-999px}
+
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery {margin:10px 0;}
+#content ul.imageGallery li {float:left; padding:6px 2px 0 0; list-style-type:none;}
+
+#content ul.imageGallery + * {clear:both;}
+
+/* Ad hoc utilities */
+.clear {clear:both;}
+.right {float:right;}
+
+/* footer */
+#footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; font-size:0.8em; overflow:hidden; border-radius:6px;
+	}
+#footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
+#footer ul li {list-style-type: none; float:left; width:26%;}
+#footer ul li:first-child {width:20%;}
+#footer p.copyright {margin:0 0 5px 190px; padding:5px 0 0 0;}
+
+/*********************************/
+/*********** colours *************/
+body {background-color:#F9F9F9; color:#000; }
+#header {
+	background-image:url(../img/furniture/banner.png), linear-gradient(#0099CC, #2E7C99);
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	}
+hr {border-bottom:solid 1px #1D88AF;}
+h1, h2 {color:#1D88AF;}
+
+
+/*  navigation  */
+#navigation ul li a {border: solid 1px #ADE;}
+#navigation ul li a {color:#333; background-color:#ADE; }
+#navigation ul li ul li a {color:#333; background-color:#D0EDF5; }
+#navigation ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#85CEE7; }
+#navigation ul li a.active,
+#navigation ul li a.active:hover {background-color:#166683; color:#FFF;}
+
+/* content */
+img.thumb { 
+	border: solid 2px #1D88AF;
+	border-radius:2px;
+	box-shadow: #CCC 3px 3px 2px;}
+/* tables */
+th {
+	background-color:#85CEE7;
+	background: linear-gradient(#ADE, #85CEE7);
+	}
+tr:nth-child(odd) {
+	background: #E0E0E0;
+	}
+/* boxes */
+.box.highlight, .box3.highlight {
+	background:linear-gradient(#0099CC, #2E7C99); 
+	color:#FFF;
+	}
+.box.highlight h2, .box3.highlight h2 {
+	color:#FFF; 
+	border-bottom:solid 1px #BBB;
+	}
+#content .box3.highlight a {
+	color:#FFF;
+	}
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery li a {border-bottom:none;}
+#content ul.imageGallery li a:link img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:visited img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:hover img, #content ul.imageGallery li a:focus img, #content ul.imageGallery li a:active img {
+	border: solid 2px #1D88AF;
+	}
+
+
+/* footer */
+#footer {
+	background:linear-gradient(#0099CC, #2E7C99);
+	color:#FFF;
+}
+
+#footer a {color:#FFF;}
+
+/*********************************/
+@media print {
+#navigation, .top, #footer, #header {display:none;}
+#page #content {width:17cm; margin:0 10px 0 -140px;}
+.box3 {width:30%;}
+.box2 {width:45%;}
+}

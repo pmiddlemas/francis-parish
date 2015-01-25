@@ -1,8 +1,5 @@
 // list all functions in one easy to find place
 $(function() { 
-	insertLinks();
-	switchCSS();
-	toggleTextSize();
 	clearSearch();
 	googleTracker();
 	$(document).bind('emchange', equalHeights); // do it again when text is resized
@@ -10,45 +7,7 @@ $(function() {
 });
 
    
-
-// 1. insert links
-// needs full path otherwise does not work in subdirectories.
-function insertLinks() {
-    $("form.searchForm").before ('<ul class="switcher"><li class="blue"><a href="#" rel="/_assets/css/blue.css" title="Default colour scheme"><span>blue</span></a></li><li class="contrast"><a href="#" rel="/_assets/css/contrast.css" title="High contrast colour scheme"><span>contrast</span></a></li></ul><ul><li class="textSwap"><a href="#?ToggleText" class="textSwap" title="Toggle text size"><span>Toggle</span></a></li></ul>');
-}
-
-
-// 2. switch css
-function switchCSS() {
-    if($.cookie("css")) {
-        $("link.switchcss").attr("href",$.cookie("css"));
-    }
-    $(".switcher li a").click(function() {
-        $("link.switchcss").attr("href",$(this).attr('rel'));
-        $.cookie("css",$(this).attr('rel'), {expires: 365, path: '/'});
-        return false;
-    });
-
-}
-
-
-
-// 3. Toggle text size
-function toggleTextSize() {
-	// set cookies
-	if($.cookie("textSizeClass")) {
-	 $("body").attr("class",$.cookie("textSizeClass"));
-	 }
-    // toggle body class
-    $("a.textSwap").click(function () {
-	 $("body").toggleClass("largeText");
-	 //read cookie
-	 $.cookie("textSizeClass",$("body").attr("class"), {expires: 365, path: '/'});
-	 return false;
-    });
-}
-
-// 4. Clear search
+// 1. Clear search
 function clearSearch() {
 	$('#q').focus(function(){
 	if(this.value=='Search')
@@ -60,7 +19,7 @@ function clearSearch() {
 
 
 
-// 6. google tracker
+// 2. google tracker
 // from http://www.carronmedia.com/extend-google-analytics-with-jquery/
 function googleTracker(){
 	    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -103,7 +62,7 @@ function googleTracker(){
 	    });
 }
 
-// 7. equal heights
+// 3. equal heights
 function equalHeights() {	
 /**
 * Thanks to RCKT for this script
@@ -139,50 +98,7 @@ function equalHeights() {
 PLUGINS 
 ***************************** */
 
-
-// 1. use cookie plug-in
-//http://plugins.jquery.com/files/jquery.cookie.js.txt
-
-jQuery.cookie = function(name, value, options) {
-    if (typeof value != 'undefined') { // name and value given, set cookie
-        options = options || {};
-        if (value === null) {
-            value = '';
-            options.expires = -1;
-        }
-        var expires = '';
-        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
-            var date;
-            if (typeof options.expires == 'number') {
-                date = new Date();
-                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
-            } else {
-                date = options.expires;
-            }
-            expires = '; expires=' + date.toUTCString(); 
-        }
-        var path = options.path ? '; path=' + (options.path) : '';
-        var domain = options.domain ? '; domain=' + (options.domain) : '';
-        var secure = options.secure ? '; secure' : '';
-        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-    } else { // only name given, get cookie
-        var cookieValue = null;
-        if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-};
-
-
-// 2. Equal Heights Plugin
+// 1. Equal Heights Plugin
 /*
  * Column equalisation (renamed for the UK)
  * Copyright (c) 2007 Tom Deater (http://www.tomdeater.com)
