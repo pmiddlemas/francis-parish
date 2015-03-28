@@ -24,7 +24,7 @@ use .normal for most pages
 use .wide for calendar page or any other instance where you need a wider page at the expense of readability.
 Then use CSS subselectors to hide and show rightcolumn and change width of content area.
 */
-#page {max-width:770px; float:right; margin:10px 0 10px 0;}
+#page {width:78%; float:right; margin:10px 0 10px 0;}
 .wide #content {max-width:770px; float:left;}
 .normal #content {max-width:520px; float:left;}
 .normal #rightcolumn {float:right; width: 240px;} 
@@ -33,7 +33,7 @@ Then use CSS subselectors to hide and show rightcolumn and change width of conte
 
 
 /*  navigation  */
-#navigation {max-width:180px; float:left; padding:10px 10px 10px 0;}
+#navigation {width:20%; float:left; padding:10px 10px 10px 0;}
 #navigation ul li {padding:3px 0 0 0;}
 #navigation ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
 #navigation ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
@@ -159,8 +159,8 @@ blockquote {margin-left: 10px;}
 	background:linear-gradient(#DDDDDD, #D0D0D0);
 	}
 .box {width:99%;}
-.box2 {width:371px;}
-.box3 {width:244px;}
+.box2 {width:49%;}
+.box3 {width:32%;}
 
 .box h2, .box2 h2, .box3 h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
 .box p, .box2 p, .box3 p {padding: 5px;}
