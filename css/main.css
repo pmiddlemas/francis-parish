@@ -1,10 +1,87 @@
-html {overflow-y:scroll;}
+/********************
+* Media queries
+* >720 		= desktop view
+* >620 720< = tablet view
+* <620 		= phone view
+********************/
+
+/********************
+* Global styles - applies to all widths 
+* includes font family, colour etc
+********************/
 * {padding:0; margin:0;}
-body {font-family: Arial, Helvetica, sans-serif; font-size:85%;}
+/********************
+* Font size
+********************/
+html {font-size: 62.5%;} 
+body {font-size: 1.6rem;} /* =16px */
+h1   {font-size: 3.2rem;} /* =32px */
 
 
-#header {max-width:960px; height:110px; margin:0 auto;}
-#header p strong {
+/********************
+* Font family
+********************/
+body {font-family: Arial, Helvetica, sans-serif;}
+h1, h2 {font-family: georgia, serif; font-weight: normal;}
+
+/********************
+* Headings - layout
+********************/
+h1 {padding:0 0 1rem 0;}
+h2 {padding:0.2rem 0 0.2rem 0; clear:left;}
+h3, h4 {clear:left;}
+
+/********************
+* Colour Map
+* Background 	= #F9F9F9	rgb(249, 249, 249)
+* Text 			= #000000	rgb(0, 0, 0) 
+* Headings 		= #1D88AF	rgb(29, 136, 175)
+* Header/Footer = #0099CC 	rgb (0, 153, 204)
+* Dark blue 	= #166683	rgb(22, 102, 131)
+* Medium blue 	= #85CEE7	rgb(133, 206, 231)
+* Light blue 	= #AADDEE	rgb(170, 221, 238)
+********************/
+
+/*  navigation  */
+nav ul li a {border: solid 1px #ADE;
+	}
+nav ul li a {color:#333; background-color:#ADE; 
+	}
+nav ul li ul li a {color:#333; background-color:#D0EDF5; 
+	}
+nav  ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#85CEE7; 
+	}
+nav  ul li a.active,
+nav ul li a.active:hover {background-color:#166683; color:#FFF;
+	}
+
+/********************
+* Header + Footer
+********************/
+header, footer {
+	background: linear-gradient(#0099cc, #2e7c99);
+	color:#FFF;
+	}
+header form {margin:0.5rem;}
+header form label {display:none;}
+footer a {color:#FFF;}
+footer {font-size: 1.2rem; /* 12px */}
+
+/********************
+* Desktop view
+********************/
+@media (min-width: 720px) {
+    
+
+
+
+/* ensure vertical scroll bar present on short pages */
+html {overflow-y:scroll;}
+
+
+
+header {max-width:960px; height:110px; margin:0 auto;}
+header p strong {
 	margin:-9999px 0 0 0;
 	position: absolute;
 	height: 1px;
@@ -12,14 +89,18 @@ body {font-family: Arial, Helvetica, sans-serif; font-size:85%;}
 	left: -999px;
 	top: -999px;
 }
-
+header {
+	background-image:url(../img/furniture/banner.png), linear-gradient(#0099CC, #2E7C99);
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	}
+header form {float:right; display:inline; padding:2px 0 4px 0;}
+#q {width:18rem;}
 .top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
-.top form {float:right; display:inline; padding:2px 0 4px 0;}
-#q {width:180px;}
-.top form label {display:none;}
+
+
 
 /*
-Template uses editable attributes
 use .normal for most pages
 use .wide for calendar page or any other instance where you need a wider page at the expense of readability.
 Then use CSS subselectors to hide and show rightcolumn and change width of content area.
@@ -33,10 +114,10 @@ Then use CSS subselectors to hide and show rightcolumn and change width of conte
 
 
 /*  navigation  */
-#navigation {width:20%; float:left; padding:10px 10px 10px 0;}
-#navigation ul li {padding:3px 0 0 0;}
-#navigation ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
-#navigation ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
+nav {width:20%; float:left; padding:10px 10px 10px 0;}
+nav ul li {padding:3px 0 0 0;}
+nav ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
+nav ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
 
 
 /*  content  */
@@ -91,10 +172,6 @@ ul.double li {float:left; width:45%;}
 ol.a  {list-style-type: lower-alpha;}
 ol.i {list-style-type: lower-roman;}
 
-/* Headings */
-h1 {font-family: georgia, serif; letter-spacing:-1px; font-size: 220%; font-weight: normal; padding:0 0 10px 0;}
-h2 {font-family: georgia, serif; letter-spacing:-1px; font-size: 140%; font-weight: normal; padding:2px 0 2px 0; clear:left;}
-h3, h4 {font-size: 100%; clear:left;}
 
 /* Forms */
 legend {padding:5px 5px 10px 5px; font-weight:bold;}
@@ -149,36 +226,35 @@ blockquote {margin-left: 10px;}
 .openform a:hover, .openform a:focus {text-decoration:underline;}
 
 /* Boxes */
-.box, .box2, .box3 {
-	float:left;  
-	padding:0; 
+.boxrow{
+  display: flex;
+
+	}
+.box {
 	margin:0 10px 10px 0; 
-	min-height:90px; 
-	overflow:hidden; border:solid 1px #DDD;
+	border:solid 1px #DDD;
 	border-radius:5px; 
 	background:linear-gradient(#DDDDDD, #D0D0D0);
+	flex: 1;
 	}
-.box {width:99%;}
-.box2 {width:49%;}
-.box3 {width:32%;}
 
-.box h2, .box2 h2, .box3 h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
-.box p, .box2 p, .box3 p {padding: 5px;}
-.box2 h3 {padding: 2px 0px 0 5px;}
-.box3 a img {border:none;}
-#content .box3 dl dt, #content .box2 dl dt {clear:both; padding:0 0 0 5px; font-weight:normal; border: none;}
-#content .box3 dl dd, #content .box2 dl dd { padding:0 0 2px 5px; border: none;}
+.box h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
+.box p {padding: 5px;}
+.box h3 {padding: 2px 0px 0 5px;}
+.box a img {border:none;}
+#content .box dl dt {clear:both; padding:0 0 0 5px; font-weight:normal; border: none;}
+#content .box dl dd {padding:0 0 2px 5px; border: none;}
 
-#content .box3 dl dt {width:45%;}
-#content .box3 dl dd {width:50%;}
+#content .box dl dt {width:45%;}
+#content .box dl dd {width:50%;}
 
-#content .box2 dl dt {width:30%;}
-#content .box2 dl dd {width:65%;}
+#content .box dl dt {width:30%;}
+#content .box dl dd {width:65%;}
 
 /* Christmas only */
 
-#content .box2 h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
-#content .box2 h2.xmas-line {line-height:41px;}
+#content .box h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
+#content .box h2.xmas-line {line-height:41px;}
 
 /* Boxes - right column */
 #rightcolumn .box {margin:0;}
@@ -207,7 +283,7 @@ blockquote {margin-left: 10px;}
 .right {float:right;}
 
 /* footer */
-#footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; font-size:0.8em; overflow:hidden; border-radius:6px;
+#footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; overflow:hidden; border-radius:6px;
 	}
 #footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
 #footer ul li {list-style-type: none; float:left; width:26%;}
@@ -217,22 +293,12 @@ blockquote {margin-left: 10px;}
 /*********************************/
 /*********** colours *************/
 body {background-color:#F9F9F9; color:#000; }
-#header {
-	background-image:url(../img/furniture/banner.png), linear-gradient(#0099CC, #2E7C99);
-	background-repeat: no-repeat;
-	border-radius: 6px;
-	}
+
 hr {border-bottom:solid 1px #1D88AF;}
 h1, h2 {color:#1D88AF;}
 
 
-/*  navigation  */
-#navigation ul li a {border: solid 1px #ADE;}
-#navigation ul li a {color:#333; background-color:#ADE; }
-#navigation ul li ul li a {color:#333; background-color:#D0EDF5; }
-#navigation ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#85CEE7; }
-#navigation ul li a.active,
-#navigation ul li a.active:hover {background-color:#166683; color:#FFF;}
+
 
 /* content */
 img.thumb { 
@@ -269,13 +335,25 @@ tr:nth-child(odd) {
 	}
 
 
-/* footer */
-#footer {
-	background:linear-gradient(#0099CC, #2E7C99);
-	color:#FFF;
-}
 
-#footer a {color:#FFF;}
+}/* end desktop media view */
+
+/********************
+* Mobile view
+********************/
+@media (max-width: 620px) {
+.has-js nav {position:absolute;
+	top:0.5rem;
+	right:0.5rem;
+	overflow:hidden;
+	height:2rem;
+	width:5rem;
+	}
+.has-js nav:focus {
+	overflow:visible;
+	}
+
+}
 
 /*********************************/
 @media print {
