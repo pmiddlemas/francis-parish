@@ -10,26 +10,36 @@
 * includes font family, colour etc
 ********************/
 * {padding:0; margin:0;}
-/********************
-* Font size
-********************/
+body {line-height:1.4em;}
+body {background-color:#F9F9F9; color:#000; }
+/* Font size */
 html {font-size: 62.5%;} 
 body {font-size: 1.6rem;} /* =16px */
 h1   {font-size: 3.2rem;} /* =32px */
 
 
-/********************
-* Font family
-********************/
+/* Font family */
 body {font-family: Arial, Helvetica, sans-serif;}
-h1, h2 {font-family: georgia, serif; font-weight: normal;}
+h1, h2 {font-family: georgia, serif; 
+	}
 
 /********************
 * Headings - layout
 ********************/
-h1 {padding:0 0 1rem 0;}
-h2 {padding:0.2rem 0 0.2rem 0; clear:left;}
+h1 {padding:0 0 1rem 0;
+	font-weight: normal;
+	color:#1D88AF;
+	}
+h2 {	padding:0.2rem 0 0.2rem 0;
+	font-weight: normal; 
+	color:#1D88AF;
+	clear:left;
+	}
 h3, h4 {clear:left;}
+
+
+hr {border-bottom:solid 1px #1D88AF;}
+h1, h2 {}
 
 /********************
 * Colour Map
@@ -71,16 +81,13 @@ footer {font-size: 1.2rem; /* 12px */}
 * Desktop view
 ********************/
 @media (min-width: 720px) {
-    
 
-
-
-/* ensure vertical scroll bar present on short pages */
-html {overflow-y:scroll;}
-
-
-
-header {max-width:960px; height:110px; margin:0 auto;}
+header {max-width:960px; 
+	height:110px; 
+	margin:0.5rem auto;
+	background-image:url(../img/furniture/banner.png), linear-gradient(#0099CC, #2E7C99);
+	background-repeat: no-repeat;
+	border-radius: 6px;}
 header p strong {
 	margin:-9999px 0 0 0;
 	position: absolute;
@@ -89,11 +96,7 @@ header p strong {
 	left: -999px;
 	top: -999px;
 }
-header {
-	background-image:url(../img/furniture/banner.png), linear-gradient(#0099CC, #2E7C99);
-	background-repeat: no-repeat;
-	border-radius: 6px;
-	}
+
 header form {float:right; display:inline; padding:2px 0 4px 0;}
 #q {width:18rem;}
 .top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
@@ -121,18 +124,18 @@ nav ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
 
 
 /*  content  */
-#content * {line-height:1.2em;}
+
 #content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
 #content ol {margin:0 0 0.5em 37px;}
 #content ul li {padding:0 0 0.8em 0.2em;}
-#content h2 + dl {padding:0.5em 0 0 0;}
-#content dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
-#content dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
-#content dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
+h2 + dl {padding:0.5em 0 0 0;}
+dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
+dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
+dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
 /* Parish councillors list */
-#content dd ul {margin: 0 0 0.1em 30px;}
-#content dd ul li {padding: 0 0 0 0.2em;}
-#content dl dd:last-of-type {margin:0 0 0.8em 0;}
+dd ul {margin: 0 0 0.1em 30px;}
+dd ul li {padding: 0 0 0 0.2em;}
+dl dd:last-of-type {margin:0 0 0.8em 0;}
 
 /* ****** Global links styles ****** */
 #content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
@@ -226,30 +229,38 @@ blockquote {margin-left: 10px;}
 .openform a:hover, .openform a:focus {text-decoration:underline;}
 
 /* Boxes */
-.boxrow{
+.boxrow2, .boxrow3 {
   display: flex;
-
 	}
 .box {
 	margin:0 10px 10px 0; 
 	border:solid 1px #DDD;
-	border-radius:5px; 
+	border-radius:5px;
 	background:linear-gradient(#DDDDDD, #D0D0D0);
-	flex: 1;
+	box-sizing: border-box;
+	flex: 0 0 auto;
 	}
+.boxrow3 .box {width:31.5%;}
+.boxrow2 .box {width:48%;}
+.box:last-child {
+    margin:0 0 10px 0;
+	} 
 
 .box h2 {margin:0 3px; padding:0 0 0 2px; border-bottom:solid 1px #CCC;}
 .box p {padding: 5px;}
 .box h3 {padding: 2px 0px 0 5px;}
 .box a img {border:none;}
-#content .box dl dt {clear:both; padding:0 0 0 5px; font-weight:normal; border: none;}
-#content .box dl dd {padding:0 0 2px 5px; border: none;}
+.box dl dt {clear:both; 
+	padding:0 0 0 5px; 
+	font-weight:normal; 
+	border: none;
+	width:44%;
+	}
+.box dl dd {padding:0 0 2px 5px; 
+	border: none;
+	width:51%;
+	}
 
-#content .box dl dt {width:45%;}
-#content .box dl dd {width:50%;}
-
-#content .box dl dt {width:30%;}
-#content .box dl dd {width:65%;}
 
 /* Christmas only */
 
@@ -283,19 +294,16 @@ blockquote {margin-left: 10px;}
 .right {float:right;}
 
 /* footer */
-#footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; overflow:hidden; border-radius:6px;
+footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; overflow:hidden; border-radius:6px;
 	}
-#footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
-#footer ul li {list-style-type: none; float:left; width:26%;}
-#footer ul li:first-child {width:20%;}
-#footer p.copyright {margin:0 0 5px 190px; padding:5px 0 0 0;}
+footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
+footer ul li {list-style-type: none; float:left; width:26%;}
+footer ul li:first-child {width:20%;}
+footer p.copyright {margin:0 0 5px 190px; padding:5px 0 0 0;}
 
 /*********************************/
 /*********** colours *************/
-body {background-color:#F9F9F9; color:#000; }
 
-hr {border-bottom:solid 1px #1D88AF;}
-h1, h2 {color:#1D88AF;}
 
 
 
