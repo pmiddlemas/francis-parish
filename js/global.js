@@ -3,6 +3,7 @@ $(function() {
 	clearSearch();
 	googleTracker();
 	addJS();
+	mobileNav();
 });
 
    
@@ -68,5 +69,10 @@ function addJS() {
 	// allow specific styling for with JS, without JS and don't know JS
 };
 
+function mobileNav(){
+    $(".mobileOnly").click(function(){
+        $("nav").toggleClass("openMobileNav");
+		});
+	}
 
 

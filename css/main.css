@@ -53,13 +53,19 @@ h1, h2 {}
 ********************/
 
 /*  navigation  */
+nav ul  li {
+	list-style-type: none;
+	}
 nav ul li a {border: solid 1px #ADE;
 	}
 nav ul li a {color:#333; background-color:#ADE; 
+	display:block;
+	text-decoration: none;
 	}
 nav ul li ul li a {color:#333; background-color:#D0EDF5; 
 	}
-nav  ul li a:hover, #navigation ul li a:focus {color:#333; background-color:#85CEE7; 
+nav  ul li a:hover, 
+nav ul li a:focus {color:#333; background-color:#85CEE7; 
 	}
 nav  ul li a.active,
 nav ul li a.active:hover {background-color:#166683; color:#FFF;
@@ -101,7 +107,8 @@ header form {float:right; display:inline; padding:2px 0 4px 0;}
 #q {width:18rem;}
 .top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
 
-
+/* Hide mobile only widgets */
+.has-js .mobileOnly {display:none;}
 
 /*
 use .normal for most pages
@@ -111,7 +118,7 @@ Then use CSS subselectors to hide and show rightcolumn and change width of conte
 #page {width:78%; float:right; margin:10px 0 10px 0;}
 .wide #content {max-width:770px; float:left;}
 .normal #content {max-width:520px; float:left;}
-.normal #rightcolumn {float:right; width: 240px;} 
+.normal #rightcolumn {float:right; max-width: 225px;} 
 .wide #rightcolumn {display:none;}/* hides right column in wide pages */
 
 
@@ -119,7 +126,7 @@ Then use CSS subselectors to hide and show rightcolumn and change width of conte
 /*  navigation  */
 nav {width:20%; float:left; padding:10px 10px 10px 0;}
 nav ul li {padding:3px 0 0 0;}
-nav ul li a {display:block; text-decoration:none; padding:2px 2px 2px 5px;}
+nav ul li a {padding:2px 2px 2px 5px;}
 nav ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
 
 
@@ -344,24 +351,35 @@ tr:nth-child(odd) {
 
 
 
-}/* end desktop media view */
+}/* end desktop view */
 
 /********************
 * Mobile view
 ********************/
 @media (max-width: 620px) {
+.has-js nav .mobileOnly {
+	cursor: pointer;
+	}
 .has-js nav {position:absolute;
 	top:0.5rem;
 	right:0.5rem;
 	overflow:hidden;
 	height:2rem;
 	width:5rem;
+	border: solid #09C 1px;
 	}
+.has-js nav.openMobileNav,
 .has-js nav:focus {
 	overflow:visible;
+	float:right;
+	width:90%;
 	}
+.has-js nav ul {
+	background-color:#09C;
+	}
+#rightcolumn {display:none;}
+}/* end mobile view */
 
-}
 
 /*********************************/
 @media print {
