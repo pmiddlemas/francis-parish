@@ -27,7 +27,6 @@ function googleTracker(){
 	 
 	        try {
 	            var pageTracker = _gat._getTracker("UA-3783137-2");
-					// UA-3783137-1 = stfrancisrcsheffield
 					// UA-3783137-2 = stfrancisrc-sheffield
 					// UA-3783137-3 = stfrancisrc-sheffield/testbed
 

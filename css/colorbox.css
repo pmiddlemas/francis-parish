@@ -70,4 +70,4 @@ Forms
 #cboxLoadedContent label {clear:both; float:left; padding:5px 5px 0 0; width:90%; }
 #cboxLoadedContent label.error {float:right; width:39%; padding:5px 0;}
 #cboxLoadedContent #submit,
-#cboxLoadedContent #reset {float:left; margin:5px 0 0 0; width:80px;}
+#cboxLoadedContent #reset {margin:5px 0 0 0; width:80px;}

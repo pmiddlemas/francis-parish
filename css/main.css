@@ -1,8 +1,8 @@
 /********************
 * Media queries
-* >720 		= desktop view
-* >620 720< = tablet view
-* <620 		= phone view
+* >800 		= desktop view
+* >620 799< = tablet view
+* <619 		= phone view
 ********************/
 
 /********************
@@ -51,6 +51,32 @@ h1, h2 {}
 * Medium blue 	= #85CEE7	rgb(133, 206, 231)
 * Light blue 	= #AADDEE	rgb(170, 221, 238)
 ********************/
+/* boxes */
+.box.highlight, .box3.highlight {
+	background:linear-gradient(#0099CC, #2E7C99); 
+	color:#FFF;
+	}
+.box.highlight h2, .box3.highlight h2 {
+	color:#FFF; 
+	border-bottom:solid 1px #BBB;
+	}
+#content .box3.highlight a {
+	color:#FFF;
+	}
+img.thumb { 
+	border: solid 2px #1D88AF;
+	border-radius:2px;
+	box-shadow: #CCC 3px 3px 2px;}
+/* tables */
+th {
+	background-color:#85CEE7;
+	background: linear-gradient(#ADE, #85CEE7);
+	}
+tr:nth-child(odd) {
+	background: #E0E0E0;
+	}
+
+
 
 /*  navigation  */
 nav ul  li {
@@ -78,15 +104,46 @@ header, footer {
 	background: linear-gradient(#0099cc, #2e7c99);
 	color:#FFF;
 	}
-header form {margin:0.5rem;}
+header form {margin:0.5rem 1rem 0.5rem 0;}
 header form label {display:none;}
+header form input {padding:0.3rem;}
 footer a {color:#FFF;}
 footer {font-size: 1.2rem; /* 12px */}
 
-/********************
+/* Page layout */
+#page {
+	margin: 1em 0;
+	}
+
+ul.doc li {list-style-image: url(../img/furniture/word.gif); padding:0 0 1em 0.2em;}
+ul.pdf li {list-style-image: url(../img/furniture/pdf.gif); padding:0 0 1em 0.2em;}
+
+p {padding:0 0 1em 0;}
+hr {clear:both; padding:1em 0 0 0; border:none;}
+hr + p {padding-top:1em;}
+img.thumb {float:left; margin: 2px 10px 4px 0;}
+img.icon {float:left; margin: 0 5px 5px 0;}
+a img.icon {border:none;}
+sup, sub {font-size:70%;}
+sup {vertical-align:top;}
+
+table {margin:0 0 10px 0;}
+td, th {text-align:left; vertical-align:top; padding:5px;}
+table th, table td {border: solid 1px #DDD;}
+td.number {text-align:right;}
+
+/* Ad hoc utilities */
+.clear {clear:both;}
+.right {float:right;}
+
+	
+/****************************************
 * Desktop view
-********************/
-@media (min-width: 720px) {
+****************************************/
+@media (min-width: 800px) {
+#page {width:78%; 
+	float:left; 
+	}
 
 header {max-width:960px; 
 	height:110px; 
@@ -115,12 +172,6 @@ use .normal for most pages
 use .wide for calendar page or any other instance where you need a wider page at the expense of readability.
 Then use CSS subselectors to hide and show rightcolumn and change width of content area.
 */
-#page {width:78%; float:right; margin:10px 0 10px 0;}
-.wide #content {max-width:770px; float:left;}
-.normal #content {max-width:520px; float:left;}
-.normal #rightcolumn {float:right; max-width: 225px;} 
-.wide #rightcolumn {display:none;}/* hides right column in wide pages */
-
 
 
 /*  navigation  */
@@ -129,46 +180,6 @@ nav ul li {padding:3px 0 0 0;}
 nav ul li a {padding:2px 2px 2px 5px;}
 nav ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
 
-
-/*  content  */
-
-#content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
-#content ol {margin:0 0 0.5em 37px;}
-#content ul li {padding:0 0 0.8em 0.2em;}
-h2 + dl {padding:0.5em 0 0 0;}
-dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
-dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
-dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
-/* Parish councillors list */
-dd ul {margin: 0 0 0.1em 30px;}
-dd ul li {padding: 0 0 0 0.2em;}
-dl dd:last-of-type {margin:0 0 0.8em 0;}
-
-/* ****** Global links styles ****** */
-#content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
-#content a:visited {text-decoration: none; color:#609; border-bottom: dashed 1px #609;}
-#content a:visited:hover {border-bottom:solid #609 1px;}
-#content a:active, #content a:focus {border-bottom: solid 1px #00F;}
-#content a:hover {border-bottom:solid #00F 1px;}
-#content a.noUnderline {border-bottom:none;}
-a img {border:none;}
-
-ul.doc li {list-style-image: url(../img/word.gif); padding:0 0 1em 0.2em;}
-ul.pdf li {list-style-image: url(../img/pdf.gif); padding:0 0 1em 0.2em;}
-
-p {padding:0 0 1em 0;}
-hr {clear:both; padding:1em 0 0 0; border:none;}
-hr + p {padding-top:1em;}
-img.thumb {float:left; margin: 2px 10px 4px 0;}
-img.icon {float:left; margin: 0 5px 5px 0;}
-a img.icon {border:none;}
-sup, sub {font-size:70%;}
-sup {vertical-align:top;}
-
-table {margin:0 0 10px 0;}
-td, th {text-align:left; vertical-align:top; padding:5px;}
-table th, table td {border: solid 1px #DDD;}
-td.number {text-align:right;}
 
 /* split into columns */
 div.double {float:left; width:49%; display:block;}
@@ -196,7 +207,7 @@ select {padding:2px 0;}
 #rightcolumn label.wide {width:200px;}
 #rightcolumn label.error {padding:0 0 5px 65px; width:140px; font-size:90%;}
 
-#rightcolumn #submit {float:left; margin:5px 0 0 0; width:75px;}
+#rightcolumn #submit {margin:5px 0 0 0; width:75px;}
 #rightcolumn #reset {float:left; margin:5px 0 0 5px; width:75px;}
 	
 #content form {margin:5px; padding:0 0 60px 0;}
@@ -225,18 +236,92 @@ blockquote {margin-left: 10px;}
 
 
 .openform {
-	float:left; 
-	width:99%;
+	width:98%;
 	padding:1em 0 1em 5px;
 	margin:10px 0 0 0;
 	border-radius:5px; 
 	background-color:#DDD;}
 
-.openform a {color:#000; background:#FFF url(../i/arrow.gif) no-repeat 0% 50%; width:200px; display: block; margin:0 auto; padding:2px 0 2px 20px; text-decoration:none;}
+.openform a { /* open large-form switch */
+	color:#000; 
+	background:#FFF url(../img/furniture/arrow.gif) no-repeat 0% 50%; 
+	width:85%; 
+	display: block; 
+	margin:0 auto; 
+	padding:2px 0 2px 20px; 
+	text-decoration:none;
+	}
 .openform a:hover, .openform a:focus {text-decoration:underline;}
+
+
+
+/* Christmas only */
+
+#content .box h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
+#content .box h2.xmas-line {line-height:41px;}
+
+/* Boxes - right column */
+#rightcolumn .box {margin:0;}
+.box3.last, .box2.last, box {margin-right:0;}
+.last + * {clear:both;}
+
+/* Contact us page */
+#map_canvas {height:350px;}
+#content address {font-style:normal; padding:0 5px;}
+
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery {margin:10px 0;}
+#content ul.imageGallery li {float:left; padding:6px 2px 0 0; list-style-type:none;}
+
+#content ul.imageGallery + * {clear:both;}
+
+
+
+/* content */
+
+
+/* ***** For colorbox  ***** */
+#content ul.imageGallery li a {border-bottom:none;}
+#content ul.imageGallery li a:link img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:visited img {border: solid 2px #FFF;}
+#content ul.imageGallery li a:hover img, #content ul.imageGallery li a:focus img, #content ul.imageGallery li a:active img {
+	border: solid 2px #1D88AF;
+	}
+
+
+
+}/* end desktop view */
+
+/****************************************
+* Desktop + Tablet views
+* For content area
+****************************************/
+@media (min-width: 620px) {
+/* layout */
+.wide #content {width:100%; float:left;}
+.normal #content {width:72%; float:left;}
+.normal #rightcolumn {width:28%; float:right;} 
+.wide #rightcolumn {display:none;}/* hides right column in wide pages */
+
+
+
+/* footer */
+footer {
+	clear:both; 
+	max-width:960px; 
+	min-height:60px; 
+	margin:10px auto; 
+	overflow:hidden; 
+	border-radius:6px;
+	}
+footer ul {margin:1rem 0 0 21%; padding:0 0 10px 0; clear:left;}
+footer ul li {list-style-type: none; float:left; width:26%;}
+footer ul li:first-child {width:20%;}
 
 /* Boxes */
 .boxrow2, .boxrow3 {
+  display: -webkit-flex; /*support Safari 7 & 8 */
   display: flex;
 	}
 .box {
@@ -245,6 +330,7 @@ blockquote {margin-left: 10px;}
 	border-radius:5px;
 	background:linear-gradient(#DDDDDD, #D0D0D0);
 	box-sizing: border-box;
+	-webkit-flex: 0 0 auto; /*support Safari 7 & 8 */
 	flex: 0 0 auto;
 	}
 .boxrow3 .box {width:31.5%;}
@@ -268,105 +354,52 @@ blockquote {margin-left: 10px;}
 	width:51%;
 	}
 
+/*  content  */
 
-/* Christmas only */
+#content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
+#content ol {margin:0 0 0.5em 37px;}
+#content ul li {padding:0 0 0.8em 0.2em;}
+h2 + dl {padding:0.5em 0 0 0;}
+dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
+dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
+dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
+/* Parish councillors list */
+dd ul {margin: 0 0 0.1em 30px;}
+dd ul li {padding: 0 0 0 0.2em;}
+dl dd:last-of-type {margin:0 0 0.8em 0;}
 
-#content .box h2.xmas-star {background: transparent url(../i/icons/christmas-star.png) no-repeat 0 50%; line-height:41px; padding-left:43px;}
-#content .box h2.xmas-line {line-height:41px;}
-
-/* Boxes - right column */
-#rightcolumn .box {margin:0;}
-.box3.last, .box2.last, box {margin-right:0;}
-.last + * {clear:both;}
-
-/* Contact us page */
-#map_canvas {height:350px;}
-#content address {font-style:normal; padding:0 5px;}
-
-/* Accessibility page */
-#content table.switch-icons ul {margin:0; padding:0;}
-#content table.switch-icons ul li {width:20px; height:20px; margin:0 2px 0 0; list-style-type: none;}
-#content table.switch-icons ul li a {border-bottom:none; display:block; float:left; width:20px; height:20px; margin:0;}
-#content table.switch-icons ul li a span {visibility:hidden; position:absolute; top:-999px}
-
-
-/* ***** For colorbox  ***** */
-#content ul.imageGallery {margin:10px 0;}
-#content ul.imageGallery li {float:left; padding:6px 2px 0 0; list-style-type:none;}
-
-#content ul.imageGallery + * {clear:both;}
-
-/* Ad hoc utilities */
-.clear {clear:both;}
-.right {float:right;}
-
-/* footer */
-footer {clear:both; max-width:960px; min-height:60px; margin:10px auto; overflow:hidden; border-radius:6px;
-	}
-footer ul {margin:10px 0 0 190px; padding:0 0 10px 0; clear:left;}
-footer ul li {list-style-type: none; float:left; width:26%;}
-footer ul li:first-child {width:20%;}
-footer p.copyright {margin:0 0 5px 190px; padding:5px 0 0 0;}
-
-/*********************************/
-/*********** colours *************/
+/* ****** Global links styles ****** */
+#content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
+#content a:visited {text-decoration: none; color:#609; border-bottom: dashed 1px #609;}
+#content a:visited:hover {border-bottom:solid #609 1px;}
+#content a:active, #content a:focus {border-bottom: solid 1px #00F;}
+#content a:hover {border-bottom:solid #00F 1px;}
+#content a.noUnderline {border-bottom:none;}
+a img {border:none;}
+	
+	
+}
 
 
 
-
-
-/* content */
-img.thumb { 
-	border: solid 2px #1D88AF;
-	border-radius:2px;
-	box-shadow: #CCC 3px 3px 2px;}
-/* tables */
-th {
-	background-color:#85CEE7;
-	background: linear-gradient(#ADE, #85CEE7);
-	}
-tr:nth-child(odd) {
-	background: #E0E0E0;
-	}
-/* boxes */
-.box.highlight, .box3.highlight {
-	background:linear-gradient(#0099CC, #2E7C99); 
-	color:#FFF;
-	}
-.box.highlight h2, .box3.highlight h2 {
-	color:#FFF; 
-	border-bottom:solid 1px #BBB;
-	}
-#content .box3.highlight a {
-	color:#FFF;
-	}
-
-/* ***** For colorbox  ***** */
-#content ul.imageGallery li a {border-bottom:none;}
-#content ul.imageGallery li a:link img {border: solid 2px #FFF;}
-#content ul.imageGallery li a:visited img {border: solid 2px #FFF;}
-#content ul.imageGallery li a:hover img, #content ul.imageGallery li a:focus img, #content ul.imageGallery li a:active img {
-	border: solid 2px #1D88AF;
-	}
-
-
-
-}/* end desktop view */
-
-/********************
-* Mobile view
-********************/
-@media (max-width: 620px) {
+/****************************************
+* Tablet + Mobile views
+* For hide/show navigation
+****************************************/
+@media (max-width: 799px) {
 .has-js nav .mobileOnly {
 	cursor: pointer;
+	color: #FFF;
+	padding:0.1rem 0 0 2.5rem;
+	border: solid #166683 1px;
 	}
 .has-js nav {position:absolute;
 	top:0.5rem;
 	right:0.5rem;
 	overflow:hidden;
-	height:2rem;
-	width:5rem;
-	border: solid #09C 1px;
+	height:2.5rem;
+	width:7rem;
+	
 	}
 .has-js nav.openMobileNav,
 .has-js nav:focus {
@@ -375,16 +408,61 @@ tr:nth-child(odd) {
 	width:90%;
 	}
 .has-js nav ul {
-	background-color:#09C;
+	background:#09C url(../img/furniture/hamburger.png) no-repeat;
 	}
+}
+/****************************************
+* Tablet view
+****************************************/
+@media (min-width: 620px) and (max-width: 799px) {
+#page {
+	width:100%; 
+	}
+footer ul {margin:1rem 0 0 1rem;}
+}
+
+/****************************************
+* Mobile view
+****************************************/
+@media (max-width: 619px) {
+
 #rightcolumn {display:none;}
 }/* end mobile view */
 
-
-/*********************************/
+/****************************************
+* Bug fixing
+****************************************/
+/* Desktop */
+@media (min-width: 800px) {
+header:after {
+    content: "Desktop view";
+    display: block;
+    margin: 3rem;
+    text-align: center;
+	}
+}
+/* Tablet */
+@media (min-width: 620px) and (max-width: 799px) {
+header:after {
+    content: "Tablet view";
+    display: block;
+    text-align: center;
+	}
+}
+/* Mobile phone */
+@media (max-width: 619px) {
+header:after {
+    content: "Mobile view";
+    display: block;
+    text-align: center;
+	}
+}
+/****************************************
+* Print view
+****************************************/
 @media print {
 #navigation, .top, #footer, #header {display:none;}
-#page #content {width:17cm; margin:0 10px 0 -140px;}
+#page #content {width:17cm; margin:0 10px 0 0;}
 .box3 {width:30%;}
 .box2 {width:45%;}
 }
