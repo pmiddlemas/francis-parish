@@ -74,4 +74,18 @@ function mobileNav(){
 		});
 	}
 
+/*****************
+TO DO
+
+Move navigation to below /wrapper this puts it at bottom of page for non-javascript devices
+
+Make #Menu a link to #navigation
+
+Use jQuery $( "nav" ).insertAfter( "#Menu" ); to move navigation up back to left of content
+
+Add aria states as used here: http://heydonworks.com/practical_aria_examples/#hamburger to make hamburger 
+keyboard and screen reader accessible
+
+
+*****************/
 

@@ -165,7 +165,7 @@ header form {float:right; display:inline; padding:2px 0 4px 0;}
 .top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
 
 /* Hide mobile only widgets */
-.has-js .mobileOnly {display:none;}
+.mobileOnly {display:none;}
 
 /*
 use .normal for most pages
