@@ -161,7 +161,9 @@ header p strong {
 }
 
 header form {float:right; display:inline; padding:2px 0 4px 0;}
-#q {width:18rem;}
+#q {width:18rem;
+	transition: width 0.5s;}
+#q:focus {width:25rem;}
 .top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
 
 /* Hide mobile only widgets */
@@ -387,29 +389,35 @@ a img {border:none;}
 * For hide/show navigation
 ****************************************/
 @media (max-width: 799px) {
-.has-js nav .mobileOnly {
+.has-js nav .mobileOnly  a {
 	cursor: pointer;
 	color: #FFF;
 	padding:0.1rem 0 0 2.5rem;
-	border: solid #166683 1px;
 	}
-.has-js nav {position:absolute;
-	top:0.5rem;
-	right:0.5rem;
+
+.has-js nav ul {
+	position:absolute;
+	top:1.5rem;
+	right:0;
+	z-index:1;
 	overflow:hidden;
-	height:2.5rem;
+	height:0;
 	width:7rem;
-	
 	}
-.has-js nav.openMobileNav,
-.has-js nav:focus {
+.has-js nav ul.openMobileNav,
+.has-js nav ul:focus {
 	overflow:visible;
-	float:right;
 	width:90%;
 	}
-.has-js nav ul {
+.has-js nav p {
 	background:#09C url(../img/furniture/hamburger.png) no-repeat;
+	padding:0 0 0.1rem 0;
+	position:absolute;
+	top:0.5rem;
+	right:0.5rem;
+	z-index:2;
 	}
+
 }
 /****************************************
 * Tablet view
