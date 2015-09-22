@@ -70,17 +70,11 @@ function addJS() {
 
 function mobileNav(){
 	$("#menu").insertAfter(".mobileOnly"); //move menu up to top of page
-    $(".mobileOnly").click(function(){
-        $("nav ul").toggleClass("openMobileNav");
+    $(".mobileOnly a").click(function(){
+        $(this).attr('aria-expanded',$(this).attr('aria-expanded') == 'true' ? 'false' : 'true');
+		$("nav ul").toggleClass("openMobileNav");
 		});
 	}
-
-/*****************
-TO DO
-
-Add aria states as used here: http://heydonworks.com/practical_aria_examples/#hamburger to make hamburger 
-keyboard and screen reader accessible
-
-
-*****************/
+	// inspiration from http://heydonworks.com/practical_aria_examples/#hamburger
+	
 

@@ -94,6 +94,7 @@ nav  ul li a:hover,
 nav ul li a:focus {color:#333; background-color:#85CEE7; 
 	}
 nav  ul li a.active,
+nav ul li a [aria-describedby="current"],/* need to ad <div class="hidden" id="current">Current page</div> */
 nav ul li a.active:hover {background-color:#166683; color:#FFF;
 	}
 
@@ -135,6 +136,7 @@ td.number {text-align:right;}
 /* Ad hoc utilities */
 .clear {clear:both;}
 .right {float:right;}
+.hidden {display:none;}
 
 	
 /****************************************
@@ -304,7 +306,7 @@ blockquote {margin-left: 10px;}
 .wide #content {width:100%; float:left;}
 .normal #content {width:72%; float:left;}
 .normal #rightcolumn {width:28%; float:right;} 
-.wide #rightcolumn {display:none;}/* hides right column in wide pages */
+.wide #rightcolumn {display:none;}/* hides right column in two column pages */
 
 
 
@@ -400,13 +402,15 @@ a img {border:none;}
 	top:1.5rem;
 	right:0;
 	z-index:1;
-	overflow:hidden;
+	/*overflow:hidden;*/
+	visibility:hidden;
 	height:0;
 	width:7rem;
 	}
 .has-js nav ul.openMobileNav,
 .has-js nav ul:focus {
-	overflow:visible;
+	/*overflow:visible;*/
+	visibility:visible;
 	width:90%;
 	}
 .has-js nav p {
