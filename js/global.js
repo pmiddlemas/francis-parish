@@ -72,7 +72,7 @@ function mobileNav(){
 	$("#menu").insertAfter(".mobileOnly"); //move menu up to top of page
     $(".mobileOnly a").click(function(){
         $(this).attr('aria-expanded',$(this).attr('aria-expanded') == 'true' ? 'false' : 'true');
-		$("nav ul").toggleClass("openMobileNav");
+		$("nav > ul").toggleClass("openMobileNav");
 		});
 	}
 	// inspiration from http://heydonworks.com/practical_aria_examples/#hamburger

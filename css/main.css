@@ -10,12 +10,14 @@
 * includes font family, colour etc
 ********************/
 * {padding:0; margin:0;}
-body {line-height:1.4em;}
+body {line-height:2rem;}
 body {background-color:#F9F9F9; color:#000; }
 /* Font size */
 html {font-size: 62.5%;} 
 body {font-size: 1.6rem;} /* =16px */
-h1   {font-size: 3.2rem;} /* =32px */
+h1   {font-size: 3.2rem; /* =32px */
+	line-height:3rem; 
+	} 
 
 
 /* Font family */
@@ -52,15 +54,16 @@ hr {border-bottom:solid 1px #1D88AF;}
 * Light blue 	= #AADDEE	rgb(170, 221, 238)
 ********************/
 /* boxes */
-.box.highlight, .box3.highlight {
+
+.box.highlight {
 	background:linear-gradient(#0099CC, #2E7C99); 
 	color:#FFF;
 	}
-.box.highlight h2, .box3.highlight h2 {
+.box.highlight h2 {
 	color:#FFF; 
 	border-bottom:solid 1px #BBB;
 	}
-#content .box3.highlight a {
+#content .box.highlight a {
 	color:#FFF;
 	}
 img.thumb { 
@@ -87,6 +90,7 @@ nav ul li a {border: solid 1px #ADE;
 nav ul li a {color:#333; background-color:#ADE; 
 	display:block;
 	text-decoration: none;
+	overflow:hidden;/* Required non-js view */
 	}
 nav ul li ul li a {color:#333; background-color:#D0EDF5; 
 	}
@@ -132,6 +136,15 @@ table {margin:0 0 10px 0;}
 td, th {text-align:left; vertical-align:top; padding:5px;}
 table th, table td {border: solid 1px #DDD;}
 td.number {text-align:right;}
+
+h2 + dl {padding:0.5em 0 0 0;}
+dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
+dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
+dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
+/* Parish councillors list */
+dd ul {margin: 0 0 0.1em 30px;}
+dd ul li {padding: 0 0 0 0.2em;}
+dl dd:last-of-type {margin:0 0 0.8em 0;}
 
 /* Ad hoc utilities */
 .clear {clear:both;}
@@ -184,7 +197,10 @@ Then use CSS subselectors to hide and show rightcolumn and change width of conte
 
 
 /*  navigation  */
-nav {width:20%; float:left; padding:10px 10px 10px 0;}
+nav {width:20%; 
+	float:left; 
+	padding:10px 10px 10px 0;
+	}
 nav ul li {padding:3px 0 0 0;}
 nav ul li a {padding:2px 2px 2px 5px;}
 nav ul li ul li a {padding:2px 0 1px 10px; font-size:0.85em;}
@@ -367,14 +383,7 @@ footer ul li:first-child {width:20%;}
 #content ul {margin:0.5em 0 0.5em 30px;} /* make left px so same in normal & wide */
 #content ol {margin:0 0 0.5em 37px;}
 #content ul li {padding:0 0 0.8em 0.2em;}
-h2 + dl {padding:0.5em 0 0 0;}
-dl dt {float: left; font-weight: bold; width:25%; clear:both; padding:0.5em 0 0.5em 0; border-top: solid #DDD 1px;}
-dl dd {float: left; width:73%; padding: 0.5em 0 0.5em 1%; border-top: solid #DDD 1px;}
-dl > dt:first-child, #content dl > dt:first-child + dd {border-top: none;}
-/* Parish councillors list */
-dd ul {margin: 0 0 0.1em 30px;}
-dd ul li {padding: 0 0 0 0.2em;}
-dl dd:last-of-type {margin:0 0 0.8em 0;}
+/* dl wos here */
 
 /* ****** Global links styles ****** */
 #content a:link {text-decoration: none; color:#00F; border-bottom: dashed 1px #00F;}
@@ -395,29 +404,31 @@ a img {border:none;}
 * For hide/show navigation
 ****************************************/
 @media (max-width: 799px) {
-.has-js nav .mobileOnly  a {
+.has-js .mobileOnly  a {
 	cursor: pointer;
 	color: #FFF;
 	padding:0.1rem 0 0 2.5rem;
 	}
 
-.has-js nav ul {
+.has-js nav {
 	position:absolute;
 	top:1.5rem;
 	right:0;
 	z-index:1;
-	/*overflow:hidden;*/
 	visibility:hidden;
 	height:0;
 	/*width:5rem;*/
 	}
+
 .has-js nav ul.openMobileNav,
 .has-js nav ul:focus {
 	/*overflow:visible;*/
 	visibility:visible;
-	width:/*90%*/20rem;
+	width:/*90%*/25rem;
+	line-height:3rem;
 	}
-.has-js nav p {
+
+.has-js p.mobileOnly {
 	background:#09C url(../img/furniture/hamburger.png) no-repeat;
 	padding:0 0 0.1rem 0;
 	position:absolute;
@@ -427,6 +438,8 @@ a img {border:none;}
 	}
 
 }
+/* Need to add styling for no-js navigation */
+
 /****************************************
 * Tablet view
 ****************************************/
@@ -452,6 +465,7 @@ footer ul {margin:1rem 0 0 1rem;}
 * Bug fixing
 ****************************************/
 /* Desktop */
+/*
 @media (min-width: 800px) {
 header:after {
     content: "Desktop view";
@@ -460,7 +474,9 @@ header:after {
     text-align: center;
 	}
 }
+*/
 /* Tablet */
+/*
 @media (min-width: 620px) and (max-width: 799px) {
 header:after {
     content: "Tablet view";
@@ -468,19 +484,23 @@ header:after {
     text-align: center;
 	}
 }
+*/
 /* Mobile phone */
-@media (max-width: 619px) {
+/*@media (max-width: 619px) {
 header:after {
     content: "Mobile view";
     display: block;
     text-align: center;
 	}
 }
+*/
 /****************************************
 * Print view
 ****************************************/
+
+
 @media print {
-#navigation, .top, #footer, #header {display:none;}
+#menu, .top, #footer, #header {display:none;}
 #page #content {width:17cm; margin:0 10px 0 0;}
 .box3 {width:30%;}
 .box2 {width:45%;}
