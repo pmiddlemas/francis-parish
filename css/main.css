@@ -117,7 +117,7 @@ footer {font-size: 1.2rem; /* 12px */}
 
 /* Page layout */
 #page {
-	margin: 1em 0;
+	margin: 1em 0/* 1em 0 */;
 	}
 
 ul.doc li {list-style-image: url(../img/furniture/word.gif); padding:0 0 1em 0.2em;}
@@ -157,7 +157,10 @@ dl dd:last-of-type {margin:0 0 0.8em 0;}
 ****************************************/
 @media (min-width: 800px) {
 #page {width:78%; 
-	float:left; 
+	float:left; /* make this 'right' to get better no-jd view, requires some layout changes for homepage boxes */
+	}
+.no-js #page {
+	float:right;
 	}
 
 header {max-width:960px; 
@@ -179,7 +182,15 @@ header form {float:right; display:inline; padding:2px 0 4px 0;}
 #q {width:18rem;
 	transition: width 0.5s;}
 #q:focus {width:25rem;}
-.top, #wrapper {max-width:960px; margin:0 auto; overflow:hidden; display:block;}
+.top, #wrapper {
+	max-width:960px; 
+	margin:0 auto; 
+	overflow:hidden; /* overflow:hidden; is preventing correct layout in non-js view */ 
+	display:block;
+	}
+.no-js #wrapper {
+	overflow:visible;
+	}
 
 /* Hide mobile only widgets */
 .mobileOnly {display:none;}
@@ -356,7 +367,7 @@ footer ul li:first-child {width:20%;}
 	background:linear-gradient(#DDDDDD, #D0D0D0);
 	box-sizing: border-box;
 	-webkit-flex: 0 0 auto; /*support Safari 7 & 8 */
-	flex: 0 0 auto;
+	flex: none; /*0 0 auto*/
 	}
 
 .box:last-child {
@@ -402,6 +413,7 @@ a img {border:none;}
 /****************************************
 * Tablet + Mobile views
 * For hide/show navigation
+* Padding for content
 ****************************************/
 @media (max-width: 799px) {
 .has-js .mobileOnly  a {
@@ -432,9 +444,16 @@ a img {border:none;}
 	background:#09C url(../img/furniture/hamburger.png) no-repeat;
 	padding:0 0 0.1rem 0;
 	position:absolute;
-	top:0.5rem;
+	top:0;
 	right:0.5rem;
 	z-index:2;
+	}
+/* Padding for content */
+header, footer {
+	padding:0.2em;
+	}
+#wrapper {
+	margin:0.2em;
 	}
 
 }
@@ -451,6 +470,11 @@ a img {border:none;}
 .boxrow3 .box {width:32.6%;} /* Slightly smaller values required on tablet view */
 .boxrow2 .box {width:49.3%;} /*  */
 footer ul {margin:1rem 0 0 1rem;}
+
+.no-js nav {
+	clear:both;
+	width:100%;
+	}
 }
 
 /****************************************
@@ -459,6 +483,7 @@ footer ul {margin:1rem 0 0 1rem;}
 @media (max-width: 619px) {
 
 #rightcolumn {display:none;}
+
 }/* end mobile view */
 
 /****************************************

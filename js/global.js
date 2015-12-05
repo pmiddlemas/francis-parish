@@ -21,6 +21,8 @@ function clearSearch() {
 
 // 2. google tracker
 // from http://www.carronmedia.com/extend-google-analytics-with-jquery/
+/********* Old tracking (ga push method)
+
 function googleTracker(){
 	    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	    $.getScript(gaJsHost + "google-analytics.com/ga.js", function(){
@@ -60,6 +62,29 @@ function googleTracker(){
 	        });
 	    });
 }
+*****************/
+
+
+// Track Download Events for Google Analytics
+// Uses Universal Analytics tracking code
+function googleTracker(){
+	var filetypes = /\.(zip|exe|pdf*|doc*|docx*|xls*|ppt*|mp3)$/i;
+		$('a[href]').each(function(){
+		var href = $(this).attr('href');
+		if (href.match(filetypes)){
+			$(this).click(function() {
+			var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+			var filePath = href.replace(/^https?\:\/\/(www.)stfrancisrc\-sheffield\.org\.uk\//i, '');
+			ga('send','event', {
+				eventCategory: 'Downloads',
+      			eventAction: 'Click - ' + extension,
+				eventLabel: filePath,
+				});
+			});
+		}
+	});
+}
+
 
 
 // addJS
@@ -70,6 +95,8 @@ function addJS() {
 
 function mobileNav(){
 	$("#menu").insertAfter(".mobileOnly"); //move menu up to top of page
+	// Once moved to top of page remove id=menu to get better toggle experience
+	$("#menu").removeAttr("id");
     $(".mobileOnly a").click(function(){
         $(this).attr('aria-expanded',$(this).attr('aria-expanded') == 'true' ? 'false' : 'true');
 		$("nav > ul").toggleClass("openMobileNav");
